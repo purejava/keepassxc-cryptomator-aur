@@ -8,11 +8,9 @@ arch=('x86_64')
 url="https://plugin.purejava.org/"
 license=('MIT')
 depends=('cryptomator' 'keepassxc')
-makedepends=('java-environment>=17' 'maven')
-source=("keepassxc-cryptomator-${pkgver}-sources.jar::https://github.com/purejava/keepassxc-cryptomator/releases/download/${pkgver}/keepassxc-cryptomator-${pkgver}-sources.jar"
-        "keepassxc-cryptomator-${pkgver}-sources.jar.asc::https://github.com/purejava/keepassxc-cryptomator/releases/download/${pkgver}/keepassxc-cryptomator-${pkgver}-sources.jar.asc")
-sha256sums=('78c8b1f455a8e936c351c4299a564e299e9b2d510aa73f5768d27d33e1bd1c96'
-            'SKIP')
+makedepends=('git' 'java-environment>=17' 'gradle')
+source=("git+https://github.com/purejava/keepassxc-cryptomator.git")
+sha256sums=('SKIP')
 options=('!strip')
 
 validpgpkeys=('54CF8E1F55CE7E977A0E41895BFB2076ABC48776')
@@ -47,13 +45,13 @@ prepare() {
 }
 
 build() {
-  cd "${srcdir}/keepassxc-cryptomator-${pkgver}"
-  mvn -B clean package --file pom.xml
+  cd "${srcdir}/keepassxc-cryptomator"
+  ./gradlew clean build --no-daemon
 }
 
 package() {
   mkdir -p "${pkgdir}/opt/keepassxc-cryptomator/"
-  cp -R "${srcdir}/keepassxc-cryptomator-${pkgver}/target/keepassxc-cryptomator-${pkgver}.jar" ${pkgdir}/opt/keepassxc-cryptomator/
+  cp -R "${srcdir}/keepassxc-cryptomator/build/libs/keepassxc-cryptomator-${pkgver}.jar" ${pkgdir}/opt/keepassxc-cryptomator/
 
   mkdir -p "${pkgdir}/usr/local/share/Cryptomator/plugins"
   ln -s "/opt/keepassxc-cryptomator/keepassxc-cryptomator-${pkgver}.jar" "${pkgdir}/usr/local/share/Cryptomator/plugins/keepassxc-cryptomator-${pkgver}.jar"

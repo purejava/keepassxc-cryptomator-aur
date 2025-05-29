@@ -9,7 +9,7 @@ url="https://plugin.purejava.org/"
 license=('MIT')
 depends=('cryptomator' 'keepassxc')
 makedepends=('git' 'java-environment>=17' 'gradle')
-source=("git+https://github.com/purejava/keepassxc-cryptomator.git")
+source=("git+https://github.com/purejava/keepassxc-cryptomator.git#tag=${pkgver}")
 sha256sums=('SKIP')
 options=('!strip')
 

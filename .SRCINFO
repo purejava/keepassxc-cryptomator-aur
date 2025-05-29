@@ -11,7 +11,7 @@ pkgbase = keepassxc-cryptomator
 	depends = cryptomator
 	depends = keepassxc
 	options = !strip
-	source = git+https://github.com/purejava/keepassxc-cryptomator.git
+	source = git+https://github.com/purejava/keepassxc-cryptomator.git#tag=1.2.8
 	validpgpkeys = 54CF8E1F55CE7E977A0E41895BFB2076ABC48776
 	sha256sums = SKIP
 

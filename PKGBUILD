@@ -2,7 +2,7 @@
 
 pkgname=keepassxc-cryptomator
 pkgver=1.2.8
-pkgrel=1
+pkgrel=2
 pkgdesc="Store Cryptomator vault passwords in KeePassXC"
 arch=(any)
 url="https://plugin.purejava.org/"

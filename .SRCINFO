@@ -1,7 +1,7 @@
 pkgbase = keepassxc-cryptomator
 	pkgdesc = Store Cryptomator vault passwords in KeePassXC
 	pkgver = 1.2.8
-	pkgrel = 1
+	pkgrel = 2
 	url = https://plugin.purejava.org/
 	arch = any
 	license = MIT

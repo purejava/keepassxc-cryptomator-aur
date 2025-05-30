@@ -1,8 +1,8 @@
 # Maintainer: Ralph Plawetzki <ralph@purejava.org>
 
 pkgname=keepassxc-cryptomator
-pkgver=1.2.8
-pkgrel=2
+pkgver=1.2.9
+pkgrel=1
 pkgdesc="Store Cryptomator vault passwords in KeePassXC"
 arch=(any)
 url="https://plugin.purejava.org/"
